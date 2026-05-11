@@ -1,0 +1,44 @@
+{
+  "appId": "com.huobao.canvas",
+  "productName": "大龙画布",
+  "directories": {
+    "output": "dist-electron"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "package.json"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "public/logo.png",
+    "artifactName": "${productName}-${version}-Setup.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "大龙画布"
+  },
+  "mac": {
+    "target": ["dmg"],
+    "icon": "public/logo.png",
+    "category": "public.app-category.graphics-design"
+  },
+  "linux": {
+    "target": ["AppImage"],
+    "icon": "public/logo.png",
+    "category": "Graphics"
+  },
+  "publish": {
+    "provider": "github",
+    "owner": "your-github-username",
+    "repo": "huobao-canvas"
+  }
+}
