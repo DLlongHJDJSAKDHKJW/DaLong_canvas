@@ -48,7 +48,14 @@
       "Bash(curl -s http://localhost:5175)",
       "Bash(curl -s http://localhost:5175/src/components/nodes/ImageNode.vue)",
       "Bash(docs\")",
-      "PowerShell(ls e:\\\\AIbiancheng\\\\DaLong_canvas\\\\huobao-canvas\\\\ | Where-Object { $_.PSIsContainer } | Select-Object Name)"
+      "PowerShell(ls e:\\\\AIbiancheng\\\\DaLong_canvas\\\\huobao-canvas\\\\ | Where-Object { $_.PSIsContainer } | Select-Object Name)",
+      "Bash(where gh *)",
+      "PowerShell(Get-Command gh -ErrorAction SilentlyContinue)",
+      "PowerShell($env:GITHUB_TOKEN; $env:GH_TOKEN)",
+      "PowerShell($env:GITHUB_TOKEN)",
+      "PowerShell($env:GH_TOKEN)",
+      "PowerShell(Get-ChildItem -Recurse -Depth 2 -File | Where-Object { $_.Extension -match '\\\\.\\(js|ts|vue|json|html|css|scss|md|yaml|yml|mjs|env|gitignore\\)$' } | ForEach-Object { $_.FullName.Replace\\('e:\\\\AIbiancheng\\\\DaLong_canvas\\\\huobao-canvas\\\\', ''\\) } | Sort-Object)",
+      "PowerShell(Get-ChildItem -Directory -Depth 1 | ForEach-Object { $_.FullName.Replace\\('e:\\\\AIbiancheng\\\\DaLong_canvas\\\\huobao-canvas\\\\', ''\\) } | Sort-Object)"
     ]
   }
 }
