@@ -115,6 +115,7 @@ export const streamChatCompletions = async function* (data, signal, options = {}
         const error = JSON.parse(errorText)
         errorMsg = error?.error?.message || error?.message || error?.code_msg || errorMsg
       } catch {}
+      if (response.status === 403) window.dispatchEvent(new CustomEvent('quota-exceeded', { detail: { message: errorMsg } }))
       throw new Error(errorMsg)
     }
 

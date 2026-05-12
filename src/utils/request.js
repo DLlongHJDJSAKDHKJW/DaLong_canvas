@@ -72,6 +72,12 @@ instance.interceptors.response.use(
       if (status === 401) {
         window.$message?.warning('API Key 未配置或已失效，请填写正确的 Key')
         window.dispatchEvent(new CustomEvent('open-api-settings'))
+      } else if (status === 403) {
+        // 403 无权限/无额度 - 显示额度不足提示
+        const msg = data?.message || data?.error?.message || 'API 调用无权限，请检查 API Key 或余额'
+        window.dispatchEvent(new CustomEvent('quota-exceeded', {
+          detail: { message: msg }
+        }))
       } else if (status === 402 || status === 429) {
         // 额度不足或请求过于频繁 - 显示顶部通知
         const isQuotaExceeded = status === 402 ||

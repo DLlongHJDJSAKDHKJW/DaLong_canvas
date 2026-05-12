@@ -4256,6 +4256,7 @@ const handleGenerateImage = async () => {
     0 8px 32px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
   z-index: 20;
+  overflow: hidden;
   will-change: transform;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -5183,6 +5184,7 @@ const handleGenerateImage = async () => {
   gap: 4px;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
   z-index: 50;
+  overflow: hidden;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -5224,7 +5226,7 @@ const handleGenerateImage = async () => {
   padding-top: 4px;
   margin-top: auto;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow: hidden;
 }
 
 .toolbar-row {

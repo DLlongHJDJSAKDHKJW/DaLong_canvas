@@ -1,7 +1,7 @@
 {
   "name": "dalong-canvas",
   "private": true,
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "DaLong Canvas 桌面端画布应用",
   "author": "DaLong",
   "type": "module",

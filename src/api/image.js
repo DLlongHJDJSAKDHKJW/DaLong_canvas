@@ -142,6 +142,7 @@ const generateGemini = async (data) => {
   if (!response.ok) {
     let msg = `HTTP ${response.status}`
     try { const err = await response.json(); msg = err?.error?.message || err?.message || msg } catch {}
+    if (response.status === 403) window.dispatchEvent(new CustomEvent('quota-exceeded', { detail: { message: msg } }))
     const error = new Error(msg)
     error.response = { status: response.status, data: { message: msg } }
     throw error
@@ -217,6 +218,7 @@ const generateOpenAI = async (data) => {
   if (!response.ok) {
     let msg = `HTTP ${response.status}`
     try { const err = await response.json(); msg = err?.error?.message || err?.message || msg } catch {}
+    if (response.status === 403) window.dispatchEvent(new CustomEvent('quota-exceeded', { detail: { message: msg } }))
     const error = new Error(msg)
     error.response = { status: response.status, data: { message: msg } }
     throw error
@@ -278,6 +280,7 @@ const generateOpenAIEdit = async (data) => {
   if (!response.ok) {
     let msg = `HTTP ${response.status}`
     try { const err = await response.json(); msg = err?.error?.message || err?.message || msg } catch {}
+    if (response.status === 403) window.dispatchEvent(new CustomEvent('quota-exceeded', { detail: { message: msg } }))
     const error = new Error(msg)
     error.response = { status: response.status, data: { message: msg } }
     throw error
